@@ -1,6 +1,0 @@
-framework module SharedCode {
-    umbrella header "SharedCode.h"
-
-    export *
-    module * { export * }
-}
