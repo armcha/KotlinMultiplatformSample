@@ -7,7 +7,3 @@ actual fun platformName(): String {
             " " +
             UIDevice.currentDevice.systemVersion
 }
-
-actual fun getRandomNumber():Int{
-    return 220
-}
