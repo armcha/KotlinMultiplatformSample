@@ -1,5 +1,7 @@
 package org.kotlin.mpp.mobile.data
 
+import org.kotlin.mpp.mobile.domain.models.User
+
 
 /**
  *
@@ -7,9 +9,9 @@ package org.kotlin.mpp.mobile.data
  *
  */
 
-interface ResultListener {
+interface ResultListener{
 
-    fun <T> onSuccess(result: T)
+    fun onSuccess(result: Any)
 
     fun onError(exception: Exception)
 }

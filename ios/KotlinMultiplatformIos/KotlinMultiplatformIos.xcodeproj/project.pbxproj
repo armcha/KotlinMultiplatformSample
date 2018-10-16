@@ -12,18 +12,20 @@
 		235964F62170DE0500B423BD /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 235964F42170DE0500B423BD /* Main.storyboard */; };
 		235964F82170DE0F00B423BD /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 235964F72170DE0F00B423BD /* Assets.xcassets */; };
 		235964FB2170DE0F00B423BD /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 235964F92170DE0F00B423BD /* LaunchScreen.storyboard */; };
-		235965032170DFA200B423BD /* SharedCode.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 235965022170DFA200B423BD /* SharedCode.framework */; };
-		235965042170DFA200B423BD /* SharedCode.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 235965022170DFA200B423BD /* SharedCode.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		239B9DF22174CB1B00A8289C /* SharedCode.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 239B9DF12174CB1B00A8289C /* SharedCode.framework */; };
+		239B9DF32174CB1B00A8289C /* SharedCode.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 239B9DF12174CB1B00A8289C /* SharedCode.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		23ACBBAB2175F8DE006DAE7C /* UI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23ACBBAA2175F8DE006DAE7C /* UI.swift */; };
+		23ACBBAD21760740006DAE7C /* PlatformLogger.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23ACBBAC21760740006DAE7C /* PlatformLogger.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
-		235965052170DFA300B423BD /* Embed Frameworks */ = {
+		239B9DF42174CB1B00A8289C /* Embed Frameworks */ = {
 			isa = PBXCopyFilesBuildPhase;
 			buildActionMask = 2147483647;
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				235965042170DFA200B423BD /* SharedCode.framework in Embed Frameworks */,
+				239B9DF32174CB1B00A8289C /* SharedCode.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -38,7 +40,9 @@
 		235964F72170DE0F00B423BD /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		235964FA2170DE0F00B423BD /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		235964FC2170DE0F00B423BD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		235965022170DFA200B423BD /* SharedCode.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SharedCode.framework; path = "../../SharedCode/build/xcode-frameworks/SharedCode.framework"; sourceTree = "<group>"; };
+		239B9DF12174CB1B00A8289C /* SharedCode.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SharedCode.framework; path = "../../SharedCode/build/xcode-frameworks/SharedCode.framework"; sourceTree = "<group>"; };
+		23ACBBAA2175F8DE006DAE7C /* UI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UI.swift; sourceTree = "<group>"; };
+		23ACBBAC21760740006DAE7C /* PlatformLogger.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlatformLogger.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -46,7 +50,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				235965032170DFA200B423BD /* SharedCode.framework in Frameworks */,
+				239B9DF22174CB1B00A8289C /* SharedCode.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -56,7 +60,7 @@
 		235964E42170DE0400B423BD = {
 			isa = PBXGroup;
 			children = (
-				235965022170DFA200B423BD /* SharedCode.framework */,
+				239B9DF12174CB1B00A8289C /* SharedCode.framework */,
 				235964EF2170DE0500B423BD /* KotlinMultiplatformIos */,
 				235964EE2170DE0500B423BD /* Products */,
 			);
@@ -79,6 +83,8 @@
 				235964F72170DE0F00B423BD /* Assets.xcassets */,
 				235964F92170DE0F00B423BD /* LaunchScreen.storyboard */,
 				235964FC2170DE0F00B423BD /* Info.plist */,
+				23ACBBAA2175F8DE006DAE7C /* UI.swift */,
+				23ACBBAC21760740006DAE7C /* PlatformLogger.swift */,
 			);
 			path = KotlinMultiplatformIos;
 			sourceTree = "<group>";
@@ -90,11 +96,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 235964FF2170DE0F00B423BD /* Build configuration list for PBXNativeTarget "KotlinMultiplatformIos" */;
 			buildPhases = (
+				235965062170DFE500B423BD /* ShellScript */,
 				235964E92170DE0500B423BD /* Sources */,
 				235964EA2170DE0500B423BD /* Frameworks */,
 				235964EB2170DE0500B423BD /* Resources */,
-				235965052170DFA300B423BD /* Embed Frameworks */,
-				235965062170DFE500B423BD /* ShellScript */,
+				239B9DF42174CB1B00A8289C /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
@@ -167,7 +173,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\ncd \"/Users/v-mobile/Desktop/KotlinMultiplatformExample/SharedCode/build/xcode-frameworks\"\n./gradlew :SharedCode:packForXCode\n";
+			shellScript = "\ncd \"/Users/v-mobile/Desktop/KotlinMultiplatformTests/SharedCode/build/xcode-frameworks\"\n./gradlew :SharedCode:packForXCode\n";
 		};
 /* End PBXShellScriptBuildPhase section */
 
@@ -176,8 +182,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				23ACBBAD21760740006DAE7C /* PlatformLogger.swift in Sources */,
 				235964F32170DE0500B423BD /* ViewController.swift in Sources */,
 				235964F12170DE0500B423BD /* AppDelegate.swift in Sources */,
+				23ACBBAB2175F8DE006DAE7C /* UI.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -325,7 +333,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				ENABLE_BITCODE = NO;
-				FRAMEWORK_SEARCH_PATHS = "/Users/v-mobile/Desktop/KotlinMultiplatformExample/SharedCode/build/xcode-frameworks";
+				FRAMEWORK_SEARCH_PATHS = "/Users/v-mobile/Desktop/KotlinMultiplatformTests/SharedCode/build/xcode-frameworks";
 				INFOPLIST_FILE = KotlinMultiplatformIos/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -344,7 +352,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				ENABLE_BITCODE = NO;
-				FRAMEWORK_SEARCH_PATHS = "/Users/v-mobile/Desktop/KotlinMultiplatformExample/SharedCode/build/xcode-frameworks";
+				FRAMEWORK_SEARCH_PATHS = "/Users/v-mobile/Desktop/KotlinMultiplatformTests/SharedCode/build/xcode-frameworks";
 				INFOPLIST_FILE = KotlinMultiplatformIos/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",

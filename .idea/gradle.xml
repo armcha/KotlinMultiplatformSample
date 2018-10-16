@@ -10,6 +10,7 @@
             <option value="$PROJECT_DIR$" />
             <option value="$PROJECT_DIR$/SharedCode" />
             <option value="$PROJECT_DIR$/android" />
+            <option value="$PROJECT_DIR$/android/app" />
           </set>
         </option>
         <option name="resolveModulePerSourceSet" value="false" />

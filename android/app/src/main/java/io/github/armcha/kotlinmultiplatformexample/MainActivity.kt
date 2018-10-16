@@ -3,13 +3,14 @@ package io.github.armcha.kotlinmultiplatformexample
 import android.os.Bundle
 import android.support.v7.app.AppCompatActivity
 import android.util.Log
+import domain.models.UserFromJson
 import kotlinx.android.synthetic.main.activity_main.*
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.GlobalScope
 import kotlinx.coroutines.launch
+import kotlinx.serialization.json.JSON
 import org.kotlin.mpp.mobile.createApplicationScreenMessage
 import org.kotlin.mpp.mobile.data.GithubApiManager
-import org.kotlin.mpp.mobile.domain.models.User
 
 class MainActivity : AppCompatActivity() {
 
@@ -22,8 +23,8 @@ class MainActivity : AppCompatActivity() {
 
         try {
             GlobalScope.launch(context = Dispatchers.Default) {
-                val result: User = apiClient.getUser("armcha")
-                Log.e("LOG", result.name)
+                val result: UserFromJson = apiClient.getUser("armcha")
+                Log.e("LOG", result.toString())
             }
         } catch (ex: Exception) {
             Log.e("ex", ex.message)

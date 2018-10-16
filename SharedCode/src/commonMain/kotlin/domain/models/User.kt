@@ -7,5 +7,5 @@ import kotlinx.serialization.Serializable
  *
  */
 
-@Serializable
+//@Serializable
 data class User(val name: String, val location: String, val id: Int)
