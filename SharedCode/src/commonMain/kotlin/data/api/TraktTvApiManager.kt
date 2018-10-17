@@ -11,7 +11,7 @@ class TraktTvApiManager : CommonApiManager("api.trakt.tv") {
 
     suspend fun getMovieList(): List<TraktTvResponse> {
         log("STARTING LOGGER")
-        val get = _httpClient.get<String> {
+        val get = httpClient.get<String> {
             parameter("limit", "50")
             apiUrl("movies/popular")
         }

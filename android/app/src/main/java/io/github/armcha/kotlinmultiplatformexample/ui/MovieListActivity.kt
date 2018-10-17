@@ -1,26 +1,24 @@
-package io.github.armcha.kotlinmultiplatformexample
+package io.github.armcha.kotlinmultiplatformexample.ui
 
 import android.os.Bundle
 import android.util.Log
 import data.repository.MovieDataRepository
 import data.repository.OmdbApiManager
 import data.repository.TraktTvApiManager
+import io.github.armcha.kotlinmultiplatformexample.R
 import kotlinx.android.synthetic.main.activity_main.*
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.android.Main
 import org.kotlin.mpp.mobile.createApplicationScreenMessage
 import org.kotlin.mpp.mobile.domain.models.Movie
-import org.kotlin.mpp.mobile.domain.models.response.TraktTvResponse
-import org.kotlin.mpp.mobile.logger
-import org.kotlin.mpp.mobile.presentation.MovieListContract
-import org.kotlin.mpp.mobile.presentation.MovieListPresenter
+import org.kotlin.mpp.mobile.presentation.movie_list.MovieListContract
+import org.kotlin.mpp.mobile.presentation.movie_list.MovieListPresenter
 
 class MovieListActivity : BaseActivity<MovieListContract.View, MovieListContract.Presenter>(), MovieListContract.View {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
-        logger = PlatfromLogger()
         textView.text = createApplicationScreenMessage()
         presenter.fetchMovieList()
     }
@@ -37,7 +35,11 @@ class MovieListActivity : BaseActivity<MovieListContract.View, MovieListContract
     }
 
     override fun showLoading() {
-        Log.e("showLoading", "showLoading")
+
+    }
+
+    override fun hideLoading() {
+
     }
 
     override fun createPresenter(): MovieListContract.Presenter {

@@ -1,4 +1,4 @@
-package data
+package data.api
 
 import io.ktor.client.*
 import io.ktor.client.features.*

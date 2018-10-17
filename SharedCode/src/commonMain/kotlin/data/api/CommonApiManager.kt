@@ -1,5 +1,6 @@
 package data
 
+import data.api.ExpectSuccess
 import io.ktor.client.HttpClient
 import io.ktor.client.features.json.JsonFeature
 import io.ktor.client.features.json.serializer.KotlinxSerializer
@@ -13,7 +14,7 @@ import org.kotlin.mpp.mobile.domain.models.response.Rating
 
 abstract class CommonApiManager(private val endPoint: String) {
 
-    protected val _httpClient = HttpClient {
+    protected val httpClient = HttpClient {
         install(JsonFeature) {
             serializer = KotlinxSerializer().apply {
                 setMapper(TraktTvResponse::class, TraktTvResponse.serializer())

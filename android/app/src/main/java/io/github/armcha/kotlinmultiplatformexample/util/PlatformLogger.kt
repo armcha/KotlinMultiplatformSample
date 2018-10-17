@@ -1,4 +1,4 @@
-package io.github.armcha.kotlinmultiplatformexample
+package io.github.armcha.kotlinmultiplatformexample.util
 
 import android.util.Log
 import org.kotlin.mpp.mobile.Logger
@@ -10,7 +10,7 @@ import org.kotlin.mpp.mobile.Logger
  *
  */
 
-class PlatfromLogger : Logger {
+class PlatformLogger : Logger {
 
     override fun log(message: String?) {
         Log.e("Tag", message)

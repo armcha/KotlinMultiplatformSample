@@ -1,8 +1,8 @@
-package io.github.armcha.kotlinmultiplatformexample
+package io.github.armcha.kotlinmultiplatformexample.ui
 
 import android.os.Bundle
 import android.support.v7.app.AppCompatActivity
-import presentation.BaseContract
+import org.kotlin.mpp.mobile.presentation.base.BaseContract
 
 /**
  *
@@ -19,13 +19,11 @@ abstract class BaseActivity<V : BaseContract.View, P : BaseContract.Presenter<V>
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        presenter.onPresenterCreate()
-        presenter.attachView(this as V)
+        presenter.onPresenterCreate(this as V)
     }
 
     override fun onDestroy() {
         presenter.onDestroy()
-        presenter.detachView()
         super.onDestroy()
     }
 

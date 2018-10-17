@@ -1,7 +1,7 @@
-package org.kotlin.mpp.mobile.presentation
+package org.kotlin.mpp.mobile.presentation.movie_list
 
 import org.kotlin.mpp.mobile.domain.models.Movie
-import presentation.BaseContract
+import org.kotlin.mpp.mobile.presentation.base.BaseContract
 
 
 /**
@@ -15,6 +15,8 @@ interface MovieListContract {
     interface View : BaseContract.View {
 
         fun showLoading()
+
+        fun hideLoading()
 
         fun showError(message: String?)
 
