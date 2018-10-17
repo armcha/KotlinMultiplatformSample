@@ -21,22 +21,22 @@ class MainActivity : AppCompatActivity() {
 
         textView.text = createApplicationScreenMessage()
 
-        val apiClient = GithubApiManager()
-        //Handler().postDelayed({
-            Log.e("LOG", "Starting")
-            //repeat(5) {
-                apiClient.getUserAsync(Dispatchers.Main, "JackWharton", object : ResultListener {
-                    override fun onSuccess(result: Any) {
-                        Log.e("LOG", result.toString())
-                        Log.e("LOG", Thread.currentThread().name)
-                    }
-
-                    override fun onError(exception: Exception) {
-                        Log.e("exception", exception.message)
-                    }
-                })
-           // }
-       // },2000)
+//        val apiClient = GithubApiManager()
+//        //Handler().postDelayed({
+//            Log.e("LOG", "Starting")
+//            //repeat(5) {
+//                apiClient.getUserAsync(Dispatchers.Main, "JackWharton", object : ResultListener {
+//                    override fun onSuccess(result: Any) {
+//                        Log.e("LOG", result.toString())
+//                        Log.e("LOG", Thread.currentThread().name)
+//                    }
+//
+//                    override fun onError(exception: Exception) {
+//                        Log.e("exception", exception.message)
+//                    }
+//                })
+//           // }
+//       // },2000)
 
 
 

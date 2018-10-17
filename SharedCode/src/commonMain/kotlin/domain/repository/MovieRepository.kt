@@ -5,5 +5,5 @@ import org.kotlin.mpp.mobile.domain.models.response.TraktTvResponse
 
 interface MovieRepository {
 
-    suspend fun getMovieList(): List<TraktTvResponse>
+    suspend fun getMovieList(): List<Movie>
 }

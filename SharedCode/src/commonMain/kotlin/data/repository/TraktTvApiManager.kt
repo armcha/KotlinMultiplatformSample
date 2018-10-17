@@ -12,13 +12,15 @@ class TraktTvApiManager : CommonApiManager("api.trakt.tv") {
     suspend fun getMovieList(): List<TraktTvResponse> {
         log("STARTING LOGGER")
         val get = _httpClient.get<String> {
-            parameter("limit", "1")
+            parameter("limit", "50")
             apiUrl("movies/popular")
         }
+        return JSON.parseList(get)
+    }
 
-        //JSON.parseList<>()
-        val a = JSON.parseList<TraktTvResponse>(get)
-        log("get ${a[0].ids.tmdb}")
-        return JSON.parseList<TraktTvResponse>(get)
+    override fun withHeaders(): List<Pair<String, String>> {
+        return listOf(
+            "trakt-api-key" to "077e2b30113120bbf9800f67d4da380276ee59aaebb9c0a8e4a6a75d80eb1b7b",
+            "trakt-api-version" to "2")
     }
 }

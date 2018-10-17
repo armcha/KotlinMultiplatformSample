@@ -33,4 +33,8 @@ class GithubApiManager : CommonApiManager("api.github.com") {
             resultListener.onError(ex)
         }
     }
+
+    override fun withHeaders(): List<Pair<String, String>> {
+        return listOf()
+    }
 }

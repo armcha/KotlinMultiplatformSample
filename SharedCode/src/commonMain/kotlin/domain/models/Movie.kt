@@ -1,10 +1,5 @@
 package org.kotlin.mpp.mobile.domain.models
 
-
-import kotlinx.serialization.Optional
-import kotlinx.serialization.Serializable
-
-@Serializable
 data class Movie(
     val title: String,
     val year: String,

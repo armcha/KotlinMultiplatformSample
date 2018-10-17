@@ -3,11 +3,13 @@ package io.github.armcha.kotlinmultiplatformexample
 import android.os.Bundle
 import android.util.Log
 import data.repository.MovieDataRepository
+import data.repository.OmdbApiManager
 import data.repository.TraktTvApiManager
 import kotlinx.android.synthetic.main.activity_main.*
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.android.Main
 import org.kotlin.mpp.mobile.createApplicationScreenMessage
+import org.kotlin.mpp.mobile.domain.models.Movie
 import org.kotlin.mpp.mobile.domain.models.response.TraktTvResponse
 import org.kotlin.mpp.mobile.logger
 import org.kotlin.mpp.mobile.presentation.MovieListContract
@@ -27,8 +29,11 @@ class MovieListActivity : BaseActivity<MovieListContract.View, MovieListContract
         Log.e("showError", "message $message")
     }
 
-    override fun onMovieListReceive(movieList: List<TraktTvResponse>) {
+    override fun onMovieListReceive(movieList: List<Movie>) {
         Log.e("onMovieListReceive", movieList.size.toString())
+        movieList.forEach {
+            Log.e("forEach", it.toString())
+        }
     }
 
     override fun showLoading() {
@@ -36,6 +41,6 @@ class MovieListActivity : BaseActivity<MovieListContract.View, MovieListContract
     }
 
     override fun createPresenter(): MovieListContract.Presenter {
-        return MovieListPresenter(Dispatchers.Main, MovieDataRepository(TraktTvApiManager()))
+        return MovieListPresenter(Dispatchers.Main, MovieDataRepository(TraktTvApiManager(), OmdbApiManager()))
     }
 }

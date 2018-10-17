@@ -1,6 +1,6 @@
 package org.kotlin.mpp.mobile.presentation
 
-import org.kotlin.mpp.mobile.domain.models.response.TraktTvResponse
+import org.kotlin.mpp.mobile.domain.models.Movie
 import presentation.BaseContract
 
 
@@ -18,7 +18,7 @@ interface MovieListContract {
 
         fun showError(message: String?)
 
-        fun onMovieListReceive(movieList: List<TraktTvResponse>)
+        fun onMovieListReceive(movieList: List<Movie>)
     }
 
     interface Presenter : BaseContract.Presenter<View> {
