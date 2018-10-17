@@ -10,7 +10,7 @@ import org.kotlin.mpp.mobile.Logger
 import org.kotlin.mpp.mobile.domain.models.User
 import kotlin.coroutines.CoroutineContext
 
-class GithubApiManager() : CommonApiManager("api.github.com") {
+class GithubApiManager : CommonApiManager("api.github.com") {
 
     suspend fun getUser(username: String): UserFromJson {
         val userResponse:UserFromJson = _httpClient.get {
