@@ -1,4 +1,4 @@
-package org.kotlin.mpp.mobile.data
+package data.cache
 
 import org.kotlin.mpp.mobile.domain.models.response.OmdbResponse
 
@@ -21,11 +21,9 @@ object MovieCache {
     }
 
     fun cache(omdbResponseList: List<OmdbResponse>) {
-        clear()
-        cache.addAll(omdbResponseList)
-    }
-
-    fun clear() {
-        cache.clear()
+        omdbResponseList.forEach {
+            cache(it)
+        }
+        //cache.addAll(omdbResponseList)
     }
 }

@@ -22,7 +22,6 @@ abstract class CommonApiManager(private val endPoint: String) {
                 setMapper(OmdbResponse::class, OmdbResponse.serializer())
                 setMapper(Rating::class, Rating.serializer())
             }
-            //serializer = ArrayListSerializer()
         }
         install(ExpectSuccess)
     }
@@ -38,5 +37,5 @@ abstract class CommonApiManager(private val endPoint: String) {
         }
     }
 
-    abstract fun withHeaders(): List<Pair<String, String>>
+    open fun withHeaders() = listOf<Pair<String, String>>()
 }

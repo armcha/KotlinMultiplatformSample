@@ -12,21 +12,14 @@ import UIKit
 
 class  BaseViewController<T:BaseContractView,P:BaseContractPresenter> :
             UIViewController,BaseContractView{
-    
-    var presenter:P? = nil
-    
-    override func viewWillAppear(_ animated: Bool) {
-        createPresenter()
-        presenter?.onPresenterCreate(view: self)
-        print("presenter created")
+
+    lazy var presenter:P = [P]() as! P
+
+    override func viewDidLoad() {
+        presenter.onPresenterCreate(view: self)
     }
     
-    override func viewWillDisappear(_ animated: Bool) {
-        presenter?.onDestroy()
-    }
-    
-    
-    func createPresenter(){
-    
+    deinit{
+        presenter.onDestroy()
     }
 }

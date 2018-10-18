@@ -1,44 +1,15 @@
 import UIKit
 import SharedCode
 
-class ViewController: UIViewController, MovieListContractView,ListenerMovieSecond{
-    func start() {
-        print("Starts")
+class ViewController: BaseViewController<MovieListContractView,MovieListContractPresenter>, MovieListContractView{
+    
+    override lazy var presenter: MovieListContractPresenter = Injections().provideMovieListPresenter(uiDispatcher: UI())
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        presenter.fetchMovieList()
     }
-    
-    func succes(result: [Movie]) {
-        print("Success")
-        print(result)
-    
-    }
-    
-    
-    ///override func createPresenter() {
-        lazy var presenter = MovieListPresenter(uiDispatcher: UI(),
-                                       movieRepository: MovieDataRepository(traktTvApiManager: TraktTvApiManager(),
-                                                                            omdbApiManager:OmdbApiManager(),
-                                                                            localCache: MovieCache.init()))
-//}
-    
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
-        print("Start fetching")
-        //presenter.fetchMovieList()
-//        presenter.fetchMovieList { ([Movie]) -> KotlinUnit in
-//            print("FETCH SUCCES")
-//            return KotlinUnit.init()
-//        }
-        //let traktTvApiManager = TraktTvApiManager()
-        //traktTvApiManager.getMovieList(dispatcher: UI(), resultListener: self)
-        
-        var obj = MovieDataRepository(traktTvApiManager: TraktTvApiManager(),
-        omdbApiManager:OmdbApiManager(),
-        localCache: MovieCache.init())
-        
-        obj.getMovieList(dispatcher: UI(), resultListener: self)
-        
-    }
-    
+
     func showLoading() {
         print("ShowLoading")
     }
@@ -58,6 +29,4 @@ class ViewController: UIViewController, MovieListContractView,ListenerMovieSecon
 //        }
         print(movieList)
     }
-    
-    
 }
