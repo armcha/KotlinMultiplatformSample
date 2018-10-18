@@ -17,18 +17,19 @@ data class OmdbResponse(
     val Language: String,
     val Country: String,
     val Awards: String,
-    val Ratings: List<Rating>,
-    val Poster: String,
-    val Metascore: String,
-    val imdbRating: String,
-    val imdbVotes: String,
-    val imdbID: String,
-    val Type: String,
-    val DVD: String,
-    val BoxOffice: String,
-    val Production: String,
-    val Website: String,
-    val Response: String)
+    //val Ratings: List<Rating>,
+    val Poster: String
+//    val Metascore: String,
+//    val imdbRating: String,
+//    val imdbVotes: String,
+//    val imdbID: String,
+//    val Type: String,
+//    val DVD: String,
+//    val BoxOffice: String,
+//    val Production: String,
+//    val Website: String,
+//    val Response: String
+   )
 
 @Serializable
 data class Rating(

@@ -1,40 +1,63 @@
 import UIKit
 import SharedCode
 
-class ViewController: UIViewController,ResultListener {
-   
-    @IBOutlet weak var Indicator: UIActivityIndicatorView!
+class ViewController: UIViewController, MovieListContractView,ListenerMovieSecond{
+    func start() {
+        print("Starts")
+    }
     
-    func onSuccess(result: Any) {
+    func succes(result: [Movie]) {
         print("Success")
-        let user:UserFromJson = result as! UserFromJson
-        print(user.name)
-        print(user.id)
-        print(user.location)
-        print(user.gists_url)
-        Indicator.stopAnimating()
-        Indicator.isHidden = true
+        print(result)
+    
     }
     
-    func onError(exception: KotlinException) {
-        print("EXC")
-        print(exception.message)
-    }
     
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        let label = UILabel(frame: CGRect(x: 0, y: 0, width: 300, height: 21))
-        label.center = CGPoint(x: 160, y: 285)
-        label.textAlignment = .center
-        label.font = label.font.withSize(25)
-        label.text = CommonKt.createApplicationScreenMessage()
-        view.addSubview(label)
+    ///override func createPresenter() {
+        lazy var presenter = MovieListPresenter(uiDispatcher: UI(),
+                                       movieRepository: MovieDataRepository(traktTvApiManager: TraktTvApiManager(),
+                                                                            omdbApiManager:OmdbApiManager(),
+                                                                            localCache: MovieCache.init()))
+//}
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        print("Start fetching")
+        //presenter.fetchMovieList()
+//        presenter.fetchMovieList { ([Movie]) -> KotlinUnit in
+//            print("FETCH SUCCES")
+//            return KotlinUnit.init()
+//        }
+        //let traktTvApiManager = TraktTvApiManager()
+        //traktTvApiManager.getMovieList(dispatcher: UI(), resultListener: self)
         
-        let api = GithubApiManager()
-        api.getUserAsync(context:  UI(), username: "JakeWharton", resultListener: self)
+        var obj = MovieDataRepository(traktTvApiManager: TraktTvApiManager(),
+        omdbApiManager:OmdbApiManager(),
+        localCache: MovieCache.init())
+        
+        obj.getMovieList(dispatcher: UI(), resultListener: self)
+        
+    }
+    
+    func showLoading() {
+        print("ShowLoading")
+    }
+    
+    func hideLoading() {
+        print("HideLoading")
+    }
+    
+    func showError(message: String?) {
+        print("Show Error")
+        print(message ?? "")
+    }
+    
+    func onMovieListReceive(movieList: [Movie]) {
+//        movieList.forEach { (Movie) in
+//            print(Movie.title)
+//        }
+        print(movieList)
     }
     
     
-    
-
 }

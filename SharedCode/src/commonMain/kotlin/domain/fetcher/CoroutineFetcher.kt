@@ -4,7 +4,6 @@ import domain.fetcher.result_listener.RequestType
 import domain.fetcher.result_listener.ResultListener
 import kotlinx.coroutines.*
 import kotlin.coroutines.CoroutineContext
-import kotlin.reflect.KSuspendFunction0
 
 /**
  *
@@ -14,8 +13,8 @@ import kotlin.reflect.KSuspendFunction0
 
 class CoroutineFetcher constructor(private val uiContext: CoroutineDispatcher) : CoroutineScope {
 
-    private val jobMap = HashMap<String, MutableList<Job>>()
-    private val requestMap = HashMap<String, HashMap<RequestType, Status>>()
+    private val jobMap = mutableMapOf<String, MutableList<Job>>()
+    private val requestMap = mutableMapOf<String, HashMap<RequestType, Status>>()
 
     private val ResultListener.key: String
         get() {
@@ -58,21 +57,8 @@ class CoroutineFetcher constructor(private val uiContext: CoroutineDispatcher) :
         }
     }
 
-    fun <T> fetch(
-        body: KSuspendFunction0<T>, requestType: RequestType,
-        resultListener: ResultListener, success: (T) -> Unit
-    ) {
-        createOrGetJobList(resultListener) += launch(
-            uiContext
-                    + exceptionHandler(resultListener, requestType)
-        ) {
-            resultListener add requestType
-            resultListener.onSuccess(requestType, body(), success)
-        }
-    }
-
     fun complete(
-        body: KSuspendFunction0<Unit>, requestType: RequestType,
+        body: suspend () -> Unit, requestType: RequestType,
         resultListener: ResultListener, success: () -> Unit
     ) {
         createOrGetJobList(resultListener) += launch(

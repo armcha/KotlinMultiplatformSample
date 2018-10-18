@@ -17,6 +17,7 @@ allprojects {
             maven { url "https://dl.bintray.com/kotlin/kotlinx/" }
             maven { url 'https://kotlin.bintray.com/kotlinx' }
             maven { url 'https://dl.bintray.com/kotlin/ktor' }
+            maven { url "https://dl.bintray.com/kotlin/kotlinx/kotlinx.serialization.runtime" }
 
             google()
             jcenter()
@@ -28,6 +29,7 @@ allprojects {
     }
     repositories {
         maven { url "http://kotlin.bintray.com/kotlin-eap" }
+        maven { url "https://dl.bintray.com/kotlin/kotlinx/kotlinx.serialization.runtime" }
         maven { url "http://kotlin.bintray.com/kotlin-dev" }
         maven { url 'https://dl.bintray.com/kotlin/kotlin-eap' }
         maven { url "https://kotlin.bintray.com/kotlinx" }

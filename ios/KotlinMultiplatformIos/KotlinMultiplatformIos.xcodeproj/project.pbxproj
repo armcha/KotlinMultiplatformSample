@@ -16,6 +16,7 @@
 		239B9DF32174CB1B00A8289C /* SharedCode.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 239B9DF12174CB1B00A8289C /* SharedCode.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		23ACBBAB2175F8DE006DAE7C /* UI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23ACBBAA2175F8DE006DAE7C /* UI.swift */; };
 		23ACBBAD21760740006DAE7C /* PlatformLogger.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23ACBBAC21760740006DAE7C /* PlatformLogger.swift */; };
+		23B1AA6921786D9600FBEF13 /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23B1AA6821786D9600FBEF13 /* BaseViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -43,6 +44,7 @@
 		239B9DF12174CB1B00A8289C /* SharedCode.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SharedCode.framework; path = "../../SharedCode/build/xcode-frameworks/SharedCode.framework"; sourceTree = "<group>"; };
 		23ACBBAA2175F8DE006DAE7C /* UI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UI.swift; sourceTree = "<group>"; };
 		23ACBBAC21760740006DAE7C /* PlatformLogger.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlatformLogger.swift; sourceTree = "<group>"; };
+		23B1AA6821786D9600FBEF13 /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -85,6 +87,7 @@
 				235964FC2170DE0F00B423BD /* Info.plist */,
 				23ACBBAA2175F8DE006DAE7C /* UI.swift */,
 				23ACBBAC21760740006DAE7C /* PlatformLogger.swift */,
+				23B1AA6821786D9600FBEF13 /* BaseViewController.swift */,
 			);
 			path = KotlinMultiplatformIos;
 			sourceTree = "<group>";
@@ -182,6 +185,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				23B1AA6921786D9600FBEF13 /* BaseViewController.swift in Sources */,
 				23ACBBAD21760740006DAE7C /* PlatformLogger.swift in Sources */,
 				235964F32170DE0500B423BD /* ViewController.swift in Sources */,
 				235964F12170DE0500B423BD /* AppDelegate.swift in Sources */,
@@ -332,6 +336,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = F3B6CRF6JT;
 				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = "/Users/v-mobile/Desktop/KotlinMultiplatformTests/SharedCode/build/xcode-frameworks";
 				INFOPLIST_FILE = KotlinMultiplatformIos/Info.plist;
@@ -351,6 +356,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = F3B6CRF6JT;
 				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = "/Users/v-mobile/Desktop/KotlinMultiplatformTests/SharedCode/build/xcode-frameworks";
 				INFOPLIST_FILE = KotlinMultiplatformIos/Info.plist;

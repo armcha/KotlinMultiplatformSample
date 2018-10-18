@@ -1,12 +1,12 @@
-package data
+package data.api
 
-import data.api.ExpectSuccess
 import io.ktor.client.HttpClient
 import io.ktor.client.features.json.JsonFeature
 import io.ktor.client.features.json.serializer.KotlinxSerializer
 import io.ktor.client.request.HttpRequestBuilder
 import io.ktor.client.request.header
 import io.ktor.http.URLProtocol
+import kotlinx.serialization.internal.ArrayListSerializer
 import org.kotlin.mpp.mobile.domain.models.response.TraktTvIdsResponse
 import org.kotlin.mpp.mobile.domain.models.response.TraktTvResponse
 import org.kotlin.mpp.mobile.domain.models.response.OmdbResponse
@@ -22,6 +22,7 @@ abstract class CommonApiManager(private val endPoint: String) {
                 setMapper(OmdbResponse::class, OmdbResponse.serializer())
                 setMapper(Rating::class, Rating.serializer())
             }
+            //serializer = ArrayListSerializer()
         }
         install(ExpectSuccess)
     }

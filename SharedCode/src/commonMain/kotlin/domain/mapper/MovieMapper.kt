@@ -19,8 +19,8 @@ object MovieMapper {
     }
 
     fun omdbResponseListToMovieList(omdbResponseList: List<OmdbResponse>): List<Movie> {
-        return omdbResponseList.map {
+        return omdbResponseList.asSequence().map {
             omdbResponseToMovie(it)
-        }
+        }.toList()
     }
 }

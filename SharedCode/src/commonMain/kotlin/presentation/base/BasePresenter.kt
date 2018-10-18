@@ -4,7 +4,6 @@ import domain.fetcher.CoroutineFetcher
 import domain.fetcher.result_listener.RequestType
 import domain.fetcher.result_listener.ResultListener
 import kotlinx.coroutines.CoroutineDispatcher
-import kotlin.reflect.KSuspendFunction0
 
 
 /**
@@ -31,7 +30,7 @@ abstract class BasePresenter<V : BaseContract.View>(uiDispatcher: CoroutineDispa
         fetcher.clear(this)
     }
 
-    fun <T> fetch(body: KSuspendFunction0<T>, requestType: RequestType, success: (T) -> Unit) {
+    fun <T> fetch(body: suspend () -> T, requestType: RequestType, success: (T) -> Unit) {
         fetcher.fetch(body, requestType, this, success)
     }
 }

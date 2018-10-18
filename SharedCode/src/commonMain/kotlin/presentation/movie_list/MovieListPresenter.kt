@@ -3,8 +3,8 @@ package org.kotlin.mpp.mobile.presentation.movie_list
 import domain.fetcher.result_listener.RequestType
 import domain.repository.MovieRepository
 import kotlinx.coroutines.CoroutineDispatcher
+import org.kotlin.mpp.mobile.domain.models.Movie
 import org.kotlin.mpp.mobile.presentation.base.BasePresenter
-import org.kotlin.mpp.mobile.presentation.movie_list.MovieListContract
 
 
 /**
@@ -18,9 +18,17 @@ class MovieListPresenter(uiDispatcher: CoroutineDispatcher, private val movieRep
     MovieListContract.Presenter {
 
     override fun fetchMovieList() {
-        fetch(movieRepository::getMovieList, RequestType.GET_POPULAR) {
+        fetch({movieRepository.getMovieList()}, RequestType.GET_POPULAR) {
             view?.hideLoading()
             view?.onMovieListReceive(it)
+        }
+    }
+
+    fun fetchMovieList(listener:(List<Movie>)-> Unit) {
+        fetch({movieRepository.getMovieList()}, RequestType.GET_POPULAR) {
+            view?.hideLoading()
+            view?.onMovieListReceive(it)
+            listener.invoke(it)
         }
     }
 
