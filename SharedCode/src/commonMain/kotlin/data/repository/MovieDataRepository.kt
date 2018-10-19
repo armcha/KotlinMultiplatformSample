@@ -2,9 +2,9 @@ package data.repository
 
 import data.api.OmdbApiManager
 import data.api.TraktTvApiManager
-import domain.repository.MovieRepository
 import data.cache.MovieCache
-import org.kotlin.mpp.mobile.domain.mapper.MovieMapper
+import domain.mapper.MovieMapper
+import domain.repository.MovieRepository
 import org.kotlin.mpp.mobile.domain.models.Movie
 
 class MovieDataRepository constructor(
@@ -16,7 +16,8 @@ class MovieDataRepository constructor(
     override suspend fun getMovieList(): List<Movie> {
         val omdbResponseList = traktTvApiManager.getMovieList()
             .map { omdbApiManager.getMoviePoster(it) }
-        //localCache.cache(omdbResponseList)
-        return MovieMapper.omdbResponseListToMovieList(omdbResponseList)
+        val movieList = MovieMapper.omdbResponseListToMovieList(omdbResponseList)
+        localCache.cache(movieList)
+        return movieList
     }
 }

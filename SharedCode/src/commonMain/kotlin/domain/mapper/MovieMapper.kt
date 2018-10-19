@@ -1,4 +1,4 @@
-package org.kotlin.mpp.mobile.domain.mapper
+package domain.mapper
 
 import org.kotlin.mpp.mobile.domain.models.Movie
 import org.kotlin.mpp.mobile.domain.models.response.OmdbResponse

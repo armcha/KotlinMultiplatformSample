@@ -24,9 +24,8 @@ class ViewController: BaseViewController<MovieListContractView,MovieListContract
     }
     
     func onMovieListReceive(movieList: [Movie]) {
-//        movieList.forEach { (Movie) in
-//            print(Movie.title)
-//        }
-        print(movieList)
+        movieList.forEach { (Movie) in
+            print(Movie.title)
+        }
     }
 }

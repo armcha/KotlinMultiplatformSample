@@ -1,6 +1,6 @@
 package data.cache
 
-import org.kotlin.mpp.mobile.domain.models.response.OmdbResponse
+import org.kotlin.mpp.mobile.domain.models.Movie
 
 
 /**
@@ -9,21 +9,9 @@ import org.kotlin.mpp.mobile.domain.models.response.OmdbResponse
  *
  */
 
-object MovieCache {
+expect object MovieCache {
 
-    val cache = mutableListOf<OmdbResponse>()
+    val cache: MutableList<Movie>
 
-    val hasCache
-        get() = cache.size != 0
-
-    fun cache(omdbResponse: OmdbResponse) {
-        cache += omdbResponse
-    }
-
-    fun cache(omdbResponseList: List<OmdbResponse>) {
-        omdbResponseList.forEach {
-            cache(it)
-        }
-        //cache.addAll(omdbResponseList)
-    }
+    fun cache(movieList: List<Movie>)
 }

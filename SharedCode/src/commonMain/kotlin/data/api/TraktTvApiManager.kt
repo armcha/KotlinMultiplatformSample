@@ -3,20 +3,28 @@ package data.api
 import io.ktor.client.request.get
 import io.ktor.client.request.parameter
 import org.kotlin.mpp.mobile.domain.parser.TraktTvJsonParser
+import util.TRAKT_TV_API_KEY
+import util.TRAKT_TV_URL
 
-class TraktTvApiManager : CommonApiManager("api.trakt.tv") {
+class TraktTvApiManager : CommonApiManager(TRAKT_TV_URL) {
+
+    private val LIMIT = "limit"
+    private val movieLimit = "10"
+    private val path = "movies/popular"
+    private val apiKey = "trakt-api-key"
+    private val apiVersion = "trakt-api-version"
 
     suspend fun getMovieList(): List<String> {
         val traktTvResponse = httpClient.get<String> {
-            parameter("limit", "5")
-            apiUrl("movies/popular")
+            parameter(LIMIT,movieLimit)
+            apiUrl(path)
         }
         return TraktTvJsonParser.parse(traktTvResponse)
     }
 
     override fun withHeaders(): List<Pair<String, String>> {
         return listOf(
-            "trakt-api-key" to "077e2b30113120bbf9800f67d4da380276ee59aaebb9c0a8e4a6a75d80eb1b7b",
-            "trakt-api-version" to "2")
+            apiKey to TRAKT_TV_API_KEY,
+            apiVersion to "2")
     }
 }
