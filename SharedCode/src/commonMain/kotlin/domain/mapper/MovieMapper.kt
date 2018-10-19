@@ -1,6 +1,6 @@
 package domain.mapper
 
-import org.kotlin.mpp.mobile.domain.models.Movie
+import domain.models.Movie
 import org.kotlin.mpp.mobile.domain.models.response.OmdbResponse
 
 

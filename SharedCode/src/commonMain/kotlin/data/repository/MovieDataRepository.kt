@@ -5,7 +5,7 @@ import data.api.TraktTvApiManager
 import data.cache.MovieCache
 import domain.mapper.MovieMapper
 import domain.repository.MovieRepository
-import org.kotlin.mpp.mobile.domain.models.Movie
+import domain.models.Movie
 
 class MovieDataRepository constructor(
     private val traktTvApiManager: TraktTvApiManager,
@@ -19,5 +19,9 @@ class MovieDataRepository constructor(
         val movieList = MovieMapper.omdbResponseListToMovieList(omdbResponseList)
         localCache.cache(movieList)
         return movieList
+    }
+
+    override suspend fun getMovieById(id: String): Movie {
+        return localCache.cache.find { it.id == id}!!
     }
 }

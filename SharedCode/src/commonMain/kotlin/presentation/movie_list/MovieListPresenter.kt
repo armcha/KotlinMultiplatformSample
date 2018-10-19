@@ -3,7 +3,7 @@ package org.kotlin.mpp.mobile.presentation.movie_list
 import domain.fetcher.result_listener.RequestType
 import domain.repository.MovieRepository
 import kotlinx.coroutines.CoroutineDispatcher
-import org.kotlin.mpp.mobile.domain.models.Movie
+import domain.models.Movie
 import org.kotlin.mpp.mobile.presentation.base.BasePresenter
 
 

@@ -1,6 +1,6 @@
 package data.cache
 
-import org.kotlin.mpp.mobile.domain.models.Movie
+import domain.models.Movie
 
 
 /**

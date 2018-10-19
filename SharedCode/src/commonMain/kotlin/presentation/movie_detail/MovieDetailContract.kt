@@ -1,4 +1,4 @@
-package org.kotlin.mpp.mobile.presentation.movie_list
+package presentation.movie_detail
 
 import domain.models.Movie
 import org.kotlin.mpp.mobile.presentation.base.BaseContract
@@ -10,21 +10,15 @@ import org.kotlin.mpp.mobile.presentation.base.BaseContract
  *
  */
 
-interface MovieListContract {
+interface MovieDetailContract {
 
     interface View : BaseContract.View {
 
-        fun showLoading()
-
-        fun hideLoading()
-
-        fun showError(message: String?)
-
-        fun onMovieListReceive(movieList: List<Movie>)
+        fun onMovieReceive(movie: Movie)
     }
 
     interface Presenter : BaseContract.Presenter<View> {
 
-        fun fetchMovieList()
+        fun fetchMovieById(id:String)
     }
 }

@@ -1,9 +1,10 @@
 package domain.repository
 
-import org.kotlin.mpp.mobile.domain.models.Movie
-import org.kotlin.mpp.mobile.domain.models.response.TraktTvResponse
+import domain.models.Movie
 
 interface MovieRepository {
 
     suspend fun getMovieList(): List<Movie>
+
+    suspend fun getMovieById(id:String): Movie
 }

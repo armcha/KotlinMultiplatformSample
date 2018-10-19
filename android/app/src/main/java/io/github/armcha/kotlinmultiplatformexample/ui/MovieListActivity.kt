@@ -8,7 +8,7 @@ import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.android.Main
 import org.kotlin.mpp.mobile.createApplicationScreenMessage
 import org.kotlin.mpp.mobile.di.Injections
-import org.kotlin.mpp.mobile.domain.models.Movie
+import domain.models.Movie
 import org.kotlin.mpp.mobile.presentation.movie_list.MovieListContract
 
 class MovieListActivity : BaseActivity<MovieListContract.View, MovieListContract.Presenter>(), MovieListContract.View {
@@ -16,7 +16,7 @@ class MovieListActivity : BaseActivity<MovieListContract.View, MovieListContract
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
-        textView.text = createApplicationScreenMessage()
+        movieName.text = createApplicationScreenMessage()
         presenter.fetchMovieList()
     }
 

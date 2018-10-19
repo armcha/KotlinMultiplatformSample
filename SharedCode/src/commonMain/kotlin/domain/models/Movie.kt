@@ -1,6 +1,7 @@
-package org.kotlin.mpp.mobile.domain.models
+package domain.models
 
 data class Movie(
+    val id:String,
     val title: String,
     val year: String,
     val released: String,
