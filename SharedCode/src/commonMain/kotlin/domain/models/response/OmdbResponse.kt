@@ -1,4 +1,4 @@
-package org.kotlin.mpp.mobile.domain.models.response
+package domain.models.response
 
 import kotlinx.serialization.Serializable
 
@@ -17,8 +17,8 @@ data class OmdbResponse(
     val Language: String,
     val Country: String,
     val Awards: String,
-    val Poster: String
-   )
+    val Poster: String,
+    val imdbID:String)
 
 @Serializable
 data class Rating(

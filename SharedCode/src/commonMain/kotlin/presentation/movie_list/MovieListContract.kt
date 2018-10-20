@@ -1,4 +1,4 @@
-package org.kotlin.mpp.mobile.presentation.movie_list
+package presentation.movie_list
 
 import domain.models.Movie
 import org.kotlin.mpp.mobile.presentation.base.BaseContract

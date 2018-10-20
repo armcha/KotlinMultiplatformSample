@@ -6,11 +6,10 @@ import io.ktor.client.features.json.serializer.KotlinxSerializer
 import io.ktor.client.request.HttpRequestBuilder
 import io.ktor.client.request.header
 import io.ktor.http.URLProtocol
-import kotlinx.serialization.internal.ArrayListSerializer
 import org.kotlin.mpp.mobile.domain.models.response.TraktTvIdsResponse
 import org.kotlin.mpp.mobile.domain.models.response.TraktTvResponse
-import org.kotlin.mpp.mobile.domain.models.response.OmdbResponse
-import org.kotlin.mpp.mobile.domain.models.response.Rating
+import domain.models.response.OmdbResponse
+import domain.models.response.Rating
 
 abstract class CommonApiManager(private val endPoint: String) {
 

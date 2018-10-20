@@ -11,11 +11,9 @@ import org.kotlin.mpp.mobile.presentation.base.BaseContract
  */
 
 abstract class BaseActivity<V : BaseContract.View, P : BaseContract.Presenter<V>> : AppCompatActivity(),
-    BaseContract.View {
+        BaseContract.View {
 
-    protected val presenter: P by lazy {
-        createPresenter()
-    }
+    abstract val presenter: P
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -26,6 +24,4 @@ abstract class BaseActivity<V : BaseContract.View, P : BaseContract.Presenter<V>
         presenter.onDestroy()
         super.onDestroy()
     }
-
-    abstract fun createPresenter(): P
 }

@@ -5,6 +5,7 @@ import domain.repository.MovieRepository
 import kotlinx.coroutines.CoroutineDispatcher
 import domain.models.Movie
 import org.kotlin.mpp.mobile.presentation.base.BasePresenter
+import presentation.movie_list.MovieListContract
 
 
 /**

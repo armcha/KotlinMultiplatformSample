@@ -1,7 +1,7 @@
 package domain.mapper
 
 import domain.models.Movie
-import org.kotlin.mpp.mobile.domain.models.response.OmdbResponse
+import domain.models.response.OmdbResponse
 
 
 /**
@@ -14,13 +14,13 @@ object MovieMapper {
 
     private fun omdbResponseToMovie(omdbResponse: OmdbResponse): Movie {
         return with(omdbResponse) {
-            Movie(Title, Year, Released, Runtime, Genre, Director, Writer, Actors, Plot, Poster)
+            Movie(imdbID, Title, Year, Released, Runtime, Genre, Director, Writer, Actors, Plot, Poster)
         }
     }
 
     fun omdbResponseListToMovieList(omdbResponseList: List<OmdbResponse>): List<Movie> {
-        return omdbResponseList.asSequence().map {
+        return omdbResponseList.map {
             omdbResponseToMovie(it)
-        }.toList()
+        }
     }
 }

@@ -1,19 +1,16 @@
-package org.kotlin.mpp.mobile.di
+package di
 
 import data.api.OmdbApiManager
 import data.api.TraktTvApiManager
+import data.cache.MovieCache
 import data.repository.MovieDataRepository
 import kotlinx.coroutines.CoroutineDispatcher
-import data.cache.MovieCache
 import org.kotlin.mpp.mobile.presentation.movie_list.MovieListPresenter
+import presentation.movie_detail.MovieDetailContract
+import presentation.movie_detail.MovieDetailPresenter
+import presentation.movie_list.MovieListContract
 
 class Injections {
-
-//    val movieListPresenter:MovieListPresenter
-//        get() {
-//            MovieListPresenter()
-//        }
-
 
     private val provideMovieCache by lazy {
         MovieCache
@@ -24,10 +21,14 @@ class Injections {
     private val provideOmdbApiManager = OmdbApiManager()
 
     private val provideMovieRepository =
-        MovieDataRepository(provideTractApiManager, provideOmdbApiManager, provideMovieCache)
+            MovieDataRepository(provideTractApiManager, provideOmdbApiManager, provideMovieCache)
 
-    fun provideMovieListPresenter(uiDispatcher: CoroutineDispatcher): MovieListPresenter {
+    fun provideMovieListPresenter(uiDispatcher: CoroutineDispatcher): MovieListContract.Presenter {
         return MovieListPresenter(uiDispatcher, provideMovieRepository)
+    }
+
+    fun provideMovieDetailPresenter(uiDispatcher: CoroutineDispatcher): MovieDetailContract.Presenter {
+        return MovieDetailPresenter(uiDispatcher, provideMovieRepository)
     }
 
 }
