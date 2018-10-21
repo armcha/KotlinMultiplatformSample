@@ -12,6 +12,7 @@ import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.android.Main
 import presentation.movie_detail.MovieDetailContract
 
+
 const val MOVIE_ID_KEY = "movieId"
 
 class MovieDetailActivity : BaseActivity<MovieDetailContract.View, MovieDetailContract.Presenter>(), MovieDetailContract.View {

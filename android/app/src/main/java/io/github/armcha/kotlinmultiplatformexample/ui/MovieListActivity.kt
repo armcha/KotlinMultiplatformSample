@@ -9,6 +9,7 @@ import io.github.armcha.kotlinmultiplatformexample.R
 import kotlinx.android.synthetic.main.activity_main.*
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.android.Main
+import org.kotlin.mpp.mobile.Strings
 import presentation.movie_list.MovieListContract
 
 
@@ -25,8 +26,8 @@ class MovieListActivity : BaseActivity<MovieListContract.View, MovieListContract
     }
 
     override fun showError(message: String?) {
-        AlertDialog.Builder(this).setMessage("Something went wrong")
-                .setPositiveButton("Yes", null)
+        AlertDialog.Builder(this).setMessage(Strings.alert_error_message)
+                .setPositiveButton(Strings.alert_positive_button_text, null)
                 .create()
                 .show()
     }
