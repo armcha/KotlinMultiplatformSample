@@ -5,7 +5,7 @@ import data.api.TraktTvApiManager
 import data.cache.MovieCache
 import data.repository.MovieDataRepository
 import kotlinx.coroutines.CoroutineDispatcher
-import org.kotlin.mpp.mobile.presentation.movie_list.MovieListPresenter
+import presentation.movie_list.MovieListPresenter
 import presentation.movie_detail.MovieDetailContract
 import presentation.movie_detail.MovieDetailPresenter
 import presentation.movie_list.MovieListContract

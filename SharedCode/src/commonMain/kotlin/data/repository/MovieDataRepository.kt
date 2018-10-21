@@ -13,8 +13,9 @@ class MovieDataRepository constructor(
     private val localCache: MovieCache
 ) : MovieRepository {
 
-    override suspend fun getMovieList(): List<Movie> {
-        val omdbResponseList = traktTvApiManager.getMovieList()
+    @ExperimentalUnsignedTypes
+    override suspend fun getMovieList(movieCount:UInt): List<Movie> {
+        val omdbResponseList = traktTvApiManager.getMovieList(movieCount)
             .map { omdbApiManager.getMoviePoster(it) }
         val movieList = MovieMapper.omdbResponseListToMovieList(omdbResponseList)
         localCache.cache(movieList)

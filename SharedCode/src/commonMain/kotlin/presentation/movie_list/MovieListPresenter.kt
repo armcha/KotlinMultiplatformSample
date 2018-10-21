@@ -1,4 +1,4 @@
-package org.kotlin.mpp.mobile.presentation.movie_list
+package presentation.movie_list
 
 import domain.fetcher.result_listener.RequestType
 import domain.repository.MovieRepository
@@ -18,18 +18,11 @@ class MovieListPresenter(uiDispatcher: CoroutineDispatcher, private val movieRep
     BasePresenter<MovieListContract.View>(uiDispatcher),
     MovieListContract.Presenter {
 
-    override fun fetchMovieList() {
-        fetch({movieRepository.getMovieList()}, RequestType.GET_POPULAR) {
+    @ExperimentalUnsignedTypes
+    override fun fetchMovieList(movieCount:UInt) {
+        fetch({movieRepository.getMovieList(movieCount)}, RequestType.GET_POPULAR) {
             view?.hideLoading()
             view?.onMovieListReceive(it)
-        }
-    }
-
-    fun fetchMovieList(listener:(List<Movie>)-> Unit) {
-        fetch({movieRepository.getMovieList()}, RequestType.GET_POPULAR) {
-            view?.hideLoading()
-            view?.onMovieListReceive(it)
-            listener.invoke(it)
         }
     }
 

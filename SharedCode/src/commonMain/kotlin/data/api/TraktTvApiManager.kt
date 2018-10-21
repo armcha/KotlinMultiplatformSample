@@ -1,22 +1,22 @@
 package data.api
 
+import domain.parser.TraktTvJsonParser
 import io.ktor.client.request.get
 import io.ktor.client.request.parameter
-import domain.parser.TraktTvJsonParser
 import util.TRAKT_TV_API_KEY
 import util.TRAKT_TV_URL
 
 class TraktTvApiManager : CommonApiManager(TRAKT_TV_URL) {
 
     private val LIMIT = "limit"
-    private val movieLimit = "10"
     private val path = "movies/popular"
     private val apiKey = "trakt-api-key"
     private val apiVersion = "trakt-api-version"
 
-    suspend fun getMovieList(): List<String> {
+    @ExperimentalUnsignedTypes
+    suspend fun getMovieList(movieCount:UInt): List<String> {
         val traktTvResponse = httpClient.get<String> {
-            parameter(LIMIT,movieLimit)
+            parameter(LIMIT,movieCount.toString())
             apiUrl(path)
         }
         return TraktTvJsonParser.parse(traktTvResponse)

@@ -22,7 +22,7 @@ class MovieListActivity : BaseActivity<MovieListContract.View, MovieListContract
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
-        presenter.fetchMovieList()
+        presenter.fetchMovieList(50U)
     }
 
     override fun showError(message: String?) {

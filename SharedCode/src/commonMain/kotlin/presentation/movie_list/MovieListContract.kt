@@ -25,6 +25,7 @@ interface MovieListContract {
 
     interface Presenter : BaseContract.Presenter<View> {
 
-        fun fetchMovieList()
+        @ExperimentalUnsignedTypes
+        fun fetchMovieList(movieCount:UInt)
     }
 }
