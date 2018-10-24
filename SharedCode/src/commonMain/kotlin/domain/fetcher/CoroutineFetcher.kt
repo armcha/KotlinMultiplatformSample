@@ -109,7 +109,6 @@ class CoroutineFetcher constructor(private val uiContext: CoroutineDispatcher) :
             val currentRequest = requestMap[resultListener.key]!! //FIXME
             currentRequest[requestType] = status
             requestMap[resultListener.key] = currentRequest
-            //requestMap.replace(key, currentRequest)
         }
     }
 

@@ -39,8 +39,6 @@ class MovieListAdapter(private val items: List<Movie>, private val itemCLickList
             Picasso.get()
                     .load(movie.poster)
                     .into(itemView.imageView)
-
-
         }
     }
 }

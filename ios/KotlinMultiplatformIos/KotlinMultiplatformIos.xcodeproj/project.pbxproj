@@ -99,7 +99,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 235964FF2170DE0F00B423BD /* Build configuration list for PBXNativeTarget "KotlinMultiplatformIos" */;
 			buildPhases = (
-				235965062170DFE500B423BD /* ShellScript */,
+				235965062170DFE500B423BD /* Run Script */,
 				235964E92170DE0500B423BD /* Sources */,
 				235964EA2170DE0500B423BD /* Frameworks */,
 				235964EB2170DE0500B423BD /* Resources */,
@@ -161,7 +161,7 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		235965062170DFE500B423BD /* ShellScript */ = {
+		235965062170DFE500B423BD /* Run Script */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -170,6 +170,7 @@
 			);
 			inputPaths = (
 			);
+			name = "Run Script";
 			outputFileListPaths = (
 			);
 			outputPaths = (

@@ -7,13 +7,6 @@ import domain.models.Movie
 import org.kotlin.mpp.mobile.presentation.base.BasePresenter
 import presentation.movie_list.MovieListContract
 
-
-/**
- *
- * Created by Arman Chatikyan on 17 Oct 2018
- *
- */
-
 class MovieListPresenter(uiDispatcher: CoroutineDispatcher, private val movieRepository: MovieRepository) :
     BasePresenter<MovieListContract.View>(uiDispatcher),
     MovieListContract.Presenter {

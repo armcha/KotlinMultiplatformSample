@@ -2,6 +2,7 @@ package org.kotlin.mpp.mobile
 
 
 import platform.UIKit.UIDevice
+import platform.UIKit.UIViewController
 
 actual fun platformName(): String {
 
