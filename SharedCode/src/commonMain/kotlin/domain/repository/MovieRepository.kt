@@ -2,7 +2,7 @@ package domain.repository
 
 import domain.models.Movie
 
-interface MovieRepository {
+internal interface MovieRepository {
 
     @ExperimentalUnsignedTypes
     suspend fun getMovieList(movieCount:UInt): List<Movie>

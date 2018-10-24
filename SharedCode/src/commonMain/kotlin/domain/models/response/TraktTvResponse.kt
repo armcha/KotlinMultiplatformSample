@@ -1,4 +1,4 @@
-package org.kotlin.mpp.mobile.domain.models.response
+package domain.models.response
 
 import kotlinx.serialization.Serializable
 
@@ -9,14 +9,14 @@ import kotlinx.serialization.Serializable
  */
 
 @Serializable
-data class TraktTvResponse(
+internal data class TraktTvResponse(
     val title: String,
     val year: Int,
     val ids: TraktTvIdsResponse
 )
 
 @Serializable
-data class TraktTvIdsResponse(
+internal data class TraktTvIdsResponse(
     val trakt: Int,
     val slug: String,
     val imdb: String,

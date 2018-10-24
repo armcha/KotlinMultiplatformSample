@@ -4,7 +4,7 @@ import kotlinx.serialization.json.JsonArray
 import kotlinx.serialization.json.JsonTreeParser
 import kotlinx.serialization.json.content
 
-object TraktTvJsonParser {
+internal object TraktTvJsonParser {
 
     fun parse(jsonString: String):List<String>{
         val response: JsonArray = JsonTreeParser(jsonString).readFully().jsonArray

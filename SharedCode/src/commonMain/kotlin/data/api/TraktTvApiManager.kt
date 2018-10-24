@@ -6,7 +6,7 @@ import io.ktor.client.request.parameter
 import util.TRAKT_TV_API_KEY
 import util.TRAKT_TV_URL
 
-class TraktTvApiManager : CommonApiManager(TRAKT_TV_URL) {
+internal class TraktTvApiManager : CommonApiManager(TRAKT_TV_URL) {
 
     private val LIMIT = "limit"
     private val path = "movies/popular"

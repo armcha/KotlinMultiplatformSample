@@ -6,12 +6,12 @@ import io.ktor.client.features.json.serializer.KotlinxSerializer
 import io.ktor.client.request.HttpRequestBuilder
 import io.ktor.client.request.header
 import io.ktor.http.URLProtocol
-import org.kotlin.mpp.mobile.domain.models.response.TraktTvIdsResponse
-import org.kotlin.mpp.mobile.domain.models.response.TraktTvResponse
+import domain.models.response.TraktTvIdsResponse
+import domain.models.response.TraktTvResponse
 import domain.models.response.OmdbResponse
 import domain.models.response.Rating
 
-abstract class CommonApiManager(private val endPoint: String) {
+internal abstract class CommonApiManager(private val endPoint: String) {
 
     protected val httpClient = HttpClient {
         install(JsonFeature) {

@@ -6,7 +6,7 @@ import kotlinx.serialization.json.JsonObject
 import kotlinx.serialization.json.JsonTreeParser
 import kotlinx.serialization.json.content
 
-object OmdbJsonParser {
+internal object OmdbJsonParser {
 
     fun parse(jsonString: String): OmdbResponse {
         val response: JsonElement = JsonTreeParser(jsonString).read()

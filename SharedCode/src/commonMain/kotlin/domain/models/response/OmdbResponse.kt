@@ -3,7 +3,7 @@ package domain.models.response
 import kotlinx.serialization.Serializable
 
 @Serializable
-data class OmdbResponse(
+internal data class OmdbResponse(
     val Title: String,
     val Year: String,
     val Released: String,

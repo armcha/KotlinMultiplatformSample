@@ -7,7 +7,7 @@ import domain.mapper.MovieMapper
 import domain.repository.MovieRepository
 import domain.models.Movie
 
-class MovieDataRepository constructor(
+internal class MovieDataRepository constructor(
     private val traktTvApiManager: TraktTvApiManager,
     private val omdbApiManager: OmdbApiManager,
     private val localCache: MovieCache

@@ -11,7 +11,7 @@ import kotlin.coroutines.CoroutineContext
  *
  */
 
-class CoroutineFetcher constructor(private val uiContext: CoroutineDispatcher) : CoroutineScope {
+internal class CoroutineFetcher constructor(private val uiContext: CoroutineDispatcher) : CoroutineScope {
 
     private val jobMap = mutableMapOf<String, MutableList<Job>>()
     private val requestMap = mutableMapOf<String, HashMap<RequestType, Status>>()

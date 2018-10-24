@@ -1,6 +1,6 @@
 package domain.fetcher.result_listener
 
-enum class RequestType {
+internal enum class RequestType {
 
     TYPE_NONE,
     GET_POPULAR,

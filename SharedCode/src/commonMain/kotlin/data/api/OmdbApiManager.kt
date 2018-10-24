@@ -7,7 +7,7 @@ import domain.parser.OmdbJsonParser
 import util.OMDB_API_KEY
 import util.OMDB_URL
 
-class OmdbApiManager : CommonApiManager(OMDB_URL) {
+internal class OmdbApiManager : CommonApiManager(OMDB_URL) {
 
     private val API_KEY = "apikey"
     private val IMDB_ID = "i"

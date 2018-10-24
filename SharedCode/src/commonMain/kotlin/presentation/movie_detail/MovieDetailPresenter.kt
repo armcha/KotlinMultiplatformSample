@@ -3,9 +3,9 @@ package presentation.movie_detail
 import domain.fetcher.result_listener.RequestType
 import domain.repository.MovieRepository
 import kotlinx.coroutines.CoroutineDispatcher
-import org.kotlin.mpp.mobile.presentation.base.BasePresenter
+import presentation.base.BasePresenter
 
-class MovieDetailPresenter(uiDispatcher: CoroutineDispatcher, private val movieRepository: MovieRepository) :
+internal class MovieDetailPresenter(uiDispatcher: CoroutineDispatcher, private val movieRepository: MovieRepository) :
     BasePresenter<MovieDetailContract.View>(uiDispatcher),
         MovieDetailContract.Presenter {
 

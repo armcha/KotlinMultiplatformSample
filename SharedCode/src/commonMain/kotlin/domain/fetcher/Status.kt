@@ -1,6 +1,6 @@
 package domain.fetcher
 
-sealed class Status {
+internal sealed class Status {
 
     object Loading : Status()
     object Error : Status()

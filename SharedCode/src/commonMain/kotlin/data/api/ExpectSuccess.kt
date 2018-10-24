@@ -6,7 +6,7 @@ import io.ktor.client.response.*
 import io.ktor.http.*
 import io.ktor.util.*
 
-object ExpectSuccess : HttpClientFeature<Unit, ExpectSuccess> {
+internal object ExpectSuccess : HttpClientFeature<Unit, ExpectSuccess> {
     override val key: AttributeKey<ExpectSuccess> = AttributeKey("ExpectSuccess")
 
     override fun prepare(block: Unit.() -> Unit): ExpectSuccess = this

@@ -1,6 +1,6 @@
 package domain.fetcher.result_listener
 
-interface ResultListener {
+internal interface ResultListener {
 
     fun onRequestStart(requestType: RequestType) {}
 

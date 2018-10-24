@@ -1,9 +1,10 @@
-package org.kotlin.mpp.mobile.presentation.base
+package presentation.base
 
 import domain.fetcher.CoroutineFetcher
 import domain.fetcher.result_listener.RequestType
 import domain.fetcher.result_listener.ResultListener
 import kotlinx.coroutines.CoroutineDispatcher
+import org.kotlin.mpp.mobile.presentation.base.BaseContract
 
 
 /**
@@ -12,7 +13,7 @@ import kotlinx.coroutines.CoroutineDispatcher
  *
  */
 
-abstract class BasePresenter<V : BaseContract.View>(uiDispatcher: CoroutineDispatcher) : BaseContract.Presenter<V>,
+internal abstract class BasePresenter<V : BaseContract.View>(uiDispatcher: CoroutineDispatcher) : BaseContract.Presenter<V>,
     ResultListener {
 
     private val fetcher: CoroutineFetcher by lazy {

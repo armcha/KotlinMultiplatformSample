@@ -10,7 +10,7 @@ import domain.models.response.OmdbResponse
  *
  */
 
-object MovieMapper {
+internal object MovieMapper {
 
     private fun omdbResponseToMovie(omdbResponse: OmdbResponse): Movie {
         return with(omdbResponse) {
