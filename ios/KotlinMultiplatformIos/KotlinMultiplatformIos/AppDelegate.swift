@@ -1,11 +1,3 @@
-//
-//  AppDelegate.swift
-//  KotlinMultiplatformIos
-//
-//  Created by V-Mobile on 10/12/18.
-//  Copyright © 2018 V-Mobile. All rights reserved.
-//
-
 import UIKit
 import SharedCode
 
