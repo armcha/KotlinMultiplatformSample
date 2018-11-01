@@ -9,7 +9,6 @@ import domain.models.Movie
 import io.github.armcha.kotlinmultiplatformexample.R
 import kotlinx.android.synthetic.main.activity_movie_detail.*
 import kotlinx.coroutines.Dispatchers
-import kotlinx.coroutines.android.Main
 import presentation.movie_detail.MovieDetailContract
 
 

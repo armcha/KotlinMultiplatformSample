@@ -25,6 +25,7 @@ internal class CoroutineFetcher constructor(private val uiContext: CoroutineDisp
     override val coroutineContext: CoroutineContext
         get() = uiContext
 
+    @ExperimentalCoroutinesApi
     fun <T> fetch(
         deferred: Deferred<T>, requestType: RequestType,
         resultListener: ResultListener, success: (T) -> Unit
@@ -38,7 +39,6 @@ internal class CoroutineFetcher constructor(private val uiContext: CoroutineDisp
                 resultListener.onSuccess(requestType, result, success)
             } else {
                 val throwable = deferred.getCompletionExceptionOrNull()
-                    ?: deferred.getCancellationException()
                 resultListener.sendErrorFor(requestType, throwable)
             }
         }
@@ -129,7 +129,7 @@ internal class CoroutineFetcher constructor(private val uiContext: CoroutineDisp
         }
     }
 
-    private fun ResultListener.sendErrorFor(requestType: RequestType, throwable: Throwable) {
+    private fun ResultListener.sendErrorFor(requestType: RequestType, throwable: Throwable?) {
         changeRequestStatus(this, requestType, Status.Error)
         onRequestError(requestType, throwable)
     }

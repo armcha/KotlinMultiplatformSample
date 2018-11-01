@@ -22,9 +22,9 @@ internal class MovieListPresenter(uiDispatcher: CoroutineDispatcher, private val
         view?.showLoading()
     }
 
-    override fun onRequestError(requestType: RequestType, throwable: Throwable) {
+    override fun onRequestError(requestType: RequestType, throwable: Throwable?) {
         super.onRequestError(requestType, throwable)
-        view?.showError(throwable.message)
+        view?.showError(throwable?.message)
         view?.hideLoading()
     }
 }

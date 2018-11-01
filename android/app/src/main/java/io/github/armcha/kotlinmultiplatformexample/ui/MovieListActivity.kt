@@ -8,7 +8,6 @@ import domain.models.Movie
 import io.github.armcha.kotlinmultiplatformexample.R
 import kotlinx.android.synthetic.main.activity_main.*
 import kotlinx.coroutines.Dispatchers
-import kotlinx.coroutines.android.Main
 import org.kotlin.mpp.mobile.Strings
 import presentation.movie_list.MovieListContract
 
