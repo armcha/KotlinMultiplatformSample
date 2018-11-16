@@ -31,8 +31,8 @@ Project structure diagram below
 License
 --------
 
-      ElasticView
-      Copyright (c) 2018 Arman Chatikyan (https://github.com/armcha/ElasticView).
+      KotlinMultiplatformSample
+      Copyright (c) 2018 Arman Chatikyan (https://github.com/armcha/KotlinMultiplatformSample).
 
       Licensed under the Apache License, Version 2.0 (the "License");
       you may not use this file except in compliance with the License.
